@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 
-import { increase, decrease } from './store/index';
+import { increase, decrease } from './store/counterSlice';
 
 function App() {
   const dispatch = useDispatch()
@@ -32,7 +32,7 @@ function App() {
       <h1>Hello Redux Basic</h1>
       {globalstate && (
         <>
-          <div className='counter'>Counter: {globalstate.value}</div>;
+          <div className='counter'>Counter: {globalstate.counter.value}</div>;
           <div>
             <button className='btn' onClick={() => dispatch(increase(5))}>increase +</button>
             <button className='btn' onClick={() => dispatch(decrease(2))}>decrease -</button>
